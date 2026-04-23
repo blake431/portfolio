@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-label="Abstract software development background">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/>
+      <stop offset="0.55" stop-color="#071a2d"/>
+      <stop offset="1" stop-color="#0b2a3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#149ddd" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#22c55e" stop-opacity="0.55"/>
+    </linearGradient>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M64 0H0V64" fill="none" stroke="#ffffff" stroke-opacity="0.06" stroke-width="1"/>
+      <path d="M32 0V64M0 32H64" fill="none" stroke="#ffffff" stroke-opacity="0.035" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 .65 0" result="glow"/>
+      <feMerge>
+        <feMergeNode in="glow"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#bg)"/>
+  <rect width="1920" height="1080" fill="url(#grid)"/>
+
+  <!-- Soft accent orbs -->
+  <g filter="url(#softGlow)" opacity="0.85">
+    <circle cx="1560" cy="210" r="180" fill="url(#accent)" opacity="0.55"/>
+    <circle cx="420" cy="820" r="240" fill="url(#accent)" opacity="0.35"/>
+    <circle cx="980" cy="540" r="320" fill="#149ddd" opacity="0.08"/>
+  </g>
+
+  <!-- Code-like brackets -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.18" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M260 360h-70v360h70" />
+    <path d="M1660 360h70v360h-70" />
+  </g>
+
+  <!-- Abstract "circuit" paths -->
+  <g fill="none" stroke="#ffffff" stroke-opacity="0.14" stroke-width="3">
+    <path d="M250 240h260v120h220v-80h240v140h310" />
+    <path d="M380 910h280v-160h240v120h260v-180h330" />
+    <path d="M1210 420h160v120h210v-160h120" />
+  </g>
+
+  <!-- Nodes -->
+  <g>
+    <circle cx="510" cy="360" r="7" fill="#22c55e" opacity="0.85"/>
+    <circle cx="730" cy="360" r="7" fill="#149ddd" opacity="0.85"/>
+    <circle cx="1210" cy="280" r="7" fill="#22c55e" opacity="0.85"/>
+    <circle cx="1520" cy="420" r="7" fill="#149ddd" opacity="0.85"/>
+    <circle cx="900" cy="750" r="7" fill="#22c55e" opacity="0.8"/>
+    <circle cx="1160" cy="870" r="7" fill="#149ddd" opacity="0.8"/>
+  </g>
+
+  <!-- Subtle pseudo-code text lines -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace" font-size="20" fill="#ffffff" fill-opacity="0.16">
+    <text x="310" y="310">const build = (idea) =&gt; ship(quality);</text>
+    <text x="310" y="340">function api(req) { return fast &amp;&amp; secure; }</text>
+    <text x="310" y="370">if (bug) { test(); fix(); deploy(); }</text>
+    <text x="310" y="400">/* clean code " strong UX " performance */</text>
+  </g>
+</svg>
